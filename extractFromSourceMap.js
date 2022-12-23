@@ -1,4 +1,3 @@
-/* cSpell:disable */
 const StackTrace = require('stacktrace-js');
 const SourceMap = require('source-map');
 
@@ -60,8 +59,8 @@ function getStackTrace() {
         path = require('path');
 
     let stackTraceFile = path.join('.', 'stacktrace.txt'); //input error file
-    let sourceFile = path.join('../sharechat-ios/','Projects/ShareChatApp/Resources/Assets/ReactNative/CodePush', 'main.jsbundle');
-    let sourceMapFile = path.join('../sharechat-ios/','Projects/ShareChatApp/Resources/Assets/ReactNative/CodePush', 'main.jsbundle.map');
+    let sourceFile = path.join("."/** js bundle file path */, 'main.jsbundle');
+    let sourceMapFile = path.join("."/** source map file path */, 'main.jsbundle.map');
 
     let minifiedStackTrace = fs.readFileSync(stackTraceFile).toString();
     let sourceCode = fs.readFileSync(sourceFile).toString();
@@ -78,4 +77,3 @@ function getStackTrace() {
 
 getStackTrace();
 
-/* cSpell:enable */
